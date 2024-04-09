@@ -2,7 +2,7 @@ function check_dependencies(){
     local dependencies="${@}"
 
     for dependency in $dependencies; do
-        if ! which "${dependency}" &> "/dev/null"; then
+        if ! type -P "${dependency}" &> "/dev/null"; then
             if [ -n "${missing_dependencies}" ]; then
                 local missing_dependencies="${missing_dependencies}, ${dependency}"
             else
