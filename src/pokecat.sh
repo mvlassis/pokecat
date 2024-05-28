@@ -11,7 +11,8 @@ if [ ! -d "${root_path}/res" ]; then
 fi
 
 # Get a random pokemon
-pokemon="$(ls "${root_path}/res" | sort -R | head -n 1 | xargs basename -s ".png")"
+# head -n 1 reads only the first line and then exits. When sort tries to write data to the closed pipe, the system raises a "Broken pipe" signal (SIGPIPE)
+pokemon="$(ls "${root_path}/res" | sort -R | awk "NR==1" | xargs basename -s ".png")"
 
 # Show the pokemon. Replace catimg with the terminal image viewer of your choice
 catimg "${root_path}/res/${pokemon}.png"
