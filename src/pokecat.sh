@@ -59,7 +59,7 @@ fi
 # Show the pokemon. Replace catimg with the terminal image viewer of your choice
 if [[ "${is_shiny}" -eq 1 ]]; then
 	catimg "${root_path}/res/shiny/${pokemon}.png"
-	printf "\e[1;33m${pokemon}\e[0m, and it's shiny!\n"
+	printf "\e[1;33m${pokemon}, and it's shiny!\e[0m\n"
 else
 	catimg "${root_path}/res/${pokemon}.png"
 	printf "\e[1m${pokemon}\e[0m\n"
