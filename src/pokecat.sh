@@ -48,7 +48,7 @@ fi
 
 # Get a random pokemon
 # head -n 1 reads only the first line and then exits. When sort tries to write data to the closed pipe, the system raises a "Broken pipe" signal (SIGPIPE)
-pokemon="$(ls "${root_path}/res" | sort -R | awk "NR==1" | xargs basename -s ".png")"
+pokemon="$(ls "${root_path}/res/"*.png | sort -R | awk "NR==1" | xargs basename -s ".png")"
 
 # Get a random number, and if it's 1, then choose a shiny
 SHINY_NUMBER="$(shuf -i 1-${SHINY_CHANCE_DENOMINATOR} -n 1)"
