@@ -14,7 +14,7 @@ EOF
 }
 
 # One Pokemon of this {SHINY_CHANCE_DENOMINATOR} will be shiny
-SHINY_CHANCE_DENOMINATOR=512
+SHINY_CHANCE_DENOMINATOR=256
 
 is_shiny=0
 # Loop to receive arguments
