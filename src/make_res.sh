@@ -74,7 +74,7 @@ for id in {1..493}; do
     printf "${id}/493\n"
     name=$(curl -LsS "https://pokeapi.co/api/v2/pokemon/${id}" | python3 -c "import json,sys; obj=json.load(sys.stdin); print(obj['name'])")
     mv "${root_path}/res/${id}.png" "${root_path}/res/${id}-${name^}.png"
-	mv "${root_path}/res/shiny/${id}.png" "${root_path}/res/shiny/${id}-${name^}.png"
+    mv "${root_path}/res/shiny/${id}.png" "${root_path}/res/shiny/${id}-${name^}.png"
 done
 
 # Hardcoded renames
