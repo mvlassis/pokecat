@@ -6,7 +6,6 @@ root_path="$(dirname "${src_path}")"
 . "${src_path}/utils.sh"
 check_dependencies git curl mogrify
 
-# Use subversion to download only the directory containing the platinum sprites. Use export to exclude .svn.
 printf "Downloading directory with sprites\n"
 
 git clone -n --depth=1 --filter=tree:0 https://github.com/PokeAPI/sprites
